@@ -1,9 +1,10 @@
 import axios from "axios"
+import { API_URL, JPA_API_URL } from '../../Constants'
 
 class AuthenticationService {
 
     executeBasicAuthenticationService(username, password) {
-        return axios.get('http://localhost:8080/basicauth', {
+        return axios.get(API_URL + '/basicauth', {
             headers: {
                 authorization: this.createBasicAuthToken(username, password)
             }
@@ -11,13 +12,13 @@ class AuthenticationService {
     }
 
     createTodoAccount(username, password) {
-        return axios.post('http://localhost:8080/addUser', {
+        return axios.post(API_URL + '/addUser', {
             username,
             password
         })
     }
     executeJwtAuthenticationService(username, password) {
-        return axios.post('http://localhost:8080/authenticate', {
+        return axios.post(API_URL + '/authenticate', {
             username,
             password
         })

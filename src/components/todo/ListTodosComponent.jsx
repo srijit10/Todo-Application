@@ -77,7 +77,7 @@ class ListTodosComponent extends Component {
         TodoDataService.deleteTodo(username, id)
             .then(
                 response => {
-                    this.setState({ message: `Delete of todo ${id} Successful` })
+                    this.setState({ message: `Delete of todo Successful` })
                     //only when it is successful refresh the todos list
                     this.refreshTodos()
                 }
